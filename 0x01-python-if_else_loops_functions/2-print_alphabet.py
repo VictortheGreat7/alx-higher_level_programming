@@ -1,3 +1,7 @@
 #!/usr/bin/python3
 
-print(''.join(chr(x) for x in range(97, 123)), end='')
+alphabet = ""
+for char in range(ord('a'), ord('z') + 1):
+    alphabet += chr(char)
+
+print("{}".format(alphabet), end="")
