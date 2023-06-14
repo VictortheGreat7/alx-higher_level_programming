@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
 def print_sorted_dictionary(a_dictionary):
-    sorted_keys = sorted(a_dictionary.keys())
+    keys = list(a_dictionary.keys())
+    
+    keys.sort()
 
-    for key in sorted_keys:
+    for key in keys:
         value = a_dictionary[key]
-        if isinstance(value, dict):
-            print(key, ":")
-            print_sorted_dictionary(value)
-        else:
-            print(key, ":", value)
+        print(key + ":" + str(value))
