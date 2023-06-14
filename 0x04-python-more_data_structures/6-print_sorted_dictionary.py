@@ -4,4 +4,9 @@ def print_sorted_dictionary(a_dictionary):
     sorted_keys = sorted(a_dictionary.keys())
 
     for key in sorted_keys:
-        print(key, ":", a_dictionary[key])
+        value = a_dictionary[key]
+        if isinstance(value, dict):
+            print(key, ":")
+            print_sorted_dictionary(value)
+        else:
+            print(key, ":", value)
