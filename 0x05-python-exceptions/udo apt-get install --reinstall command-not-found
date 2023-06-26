@@ -1,6 +1,0 @@
-Desired=Unknown/Install/Remove/Purge/Hold
-| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
-|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
-||/ Name              Version      Architecture Description
-+++-=================-============-============-=============================================================
-ii  command-not-found 20.04.6      all          Suggest installation of packages in interactive bash sessions
