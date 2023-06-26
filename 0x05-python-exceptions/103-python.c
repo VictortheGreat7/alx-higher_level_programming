@@ -18,7 +18,7 @@ void print_python_list(PyObject *p)
 	}
 
 	/* Get the size and allocation of the list */
-	Py_ssize_t size = PyList_Size(p);
+	Py_ssize_t size = ((PyVarObject *)p)->ob_size;
 	Py_ssize_t allocated = ((PyListObject *)p)->allocated;
 
 	printf("[*] Python list info\n");
@@ -28,8 +28,8 @@ void print_python_list(PyObject *p)
 	/* Iterate over each element and print out its type */
 	for (Py_ssize_t i = 0; i < size; i++)
 	{
-		PyObject *item = PyList_GetItem(p, i);
-		const char *type = Py_TYPE(item)->tp_name;
+		PyObject *item = ((PyListObject *)p)->ob_item[i];
+		const char *type = item->ob_type->tp_name;
 
 		printf("Element %ld: %s\n", i, type);
 	}
@@ -53,8 +53,8 @@ void print_python_bytes(PyObject *p)
 	}
 
 	/* Get the size and string representation of the bytes object */
-	Py_ssize_t size = PyBytes_Size(p);
-	const char *string = PyBytes_AsString(p);
+	Py_ssize_t size = ((PyVarObject *)p)->ob_size;
+	const char *string = PyBytes_AS_STRING(p);
 
 	printf("[.] bytes object info\n");
 	printf("  size: %ld\n", size);
@@ -85,7 +85,7 @@ void print_python_float(PyObject *p)
 	}
 
 	/* Get the value of the float object */
-	double value = PyFloat_AsDouble(p);
+	double value = ((PyFloatObject *)p)->ob_fval;
 
 	printf("[.] float object info\n");
 	printf("  value: %f\n", value);
