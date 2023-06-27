@@ -9,7 +9,7 @@ class Square:
         __size (int): The size of the square
 
     Methods:
-        area(self): Calculates and returns the area of the square
+        area(self): Calculates and returns the current area of the square
         size(self): Getter method to get the size attribute
         size(self, value): Setter method to set the size attribute
     """
