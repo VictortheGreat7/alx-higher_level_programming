@@ -27,7 +27,7 @@ class Rectangle:
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """Initializing a square instance with an optional size and position
+        """Initializing a square instance with an optional width and height
 
         Args:
             width (int): The width of the rectangle
@@ -60,6 +60,7 @@ class Rectangle:
 
     def __del__(self):
         """Prints a message when an instance of Rectangle is deleted
+            and decrements the instance count
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1

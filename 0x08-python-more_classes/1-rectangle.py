@@ -18,12 +18,12 @@ class Rectangle:
         height(self, value): Method to set the height attribute
     """
     def __init__(self, width=0, height=0):
-        """Initializing a square instance with an optional size and position
+        """Initializing a square instance with an optional width and height
 
         Args:
-            width (int, optional): The width of the rectangle
+            width (int): The width of the rectangle
                                     which defaults to 0
-            height (int, optional): The position of the rectangle
+            height (int): The position of the rectangle
                                     which defaults to 0
         """
         self.width = width
