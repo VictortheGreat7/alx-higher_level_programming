@@ -38,10 +38,11 @@ class Rectangle:
         Returns:
             str: The rectangle representation with '#' characters
         """
-        if (self.__width == 0) or (self.__height == 0):
-            return ("")
-        else:
-            return ('\n'.join(['#' * self.__width for _ in range (self.__height)]))
+        string = ""
+        if (self.__width != 0) and (self.__height != 0):
+            string += '\n'.join('#' * self.__width
+                                for _ in range(self.__height))
+            return (string)
 
     @property
     def width(self):
