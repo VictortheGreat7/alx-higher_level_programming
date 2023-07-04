@@ -1,0 +1,62 @@
+The `3-say_my_name` Module
+==========================
+
+This module contains a function `say_my_name` that prints a person's name
+
+Using `say_my_name`
+-------------------
+
+Importing the function from the module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Checking for module's docstring:
+>>> m = __import__("3-say_my_name").__doc__
+>>> len(m) > 1
+True
+
+Checking for function's docstring:
+>>> f = __import__("3-say_my_name").say_my_name.__doc__
+>>> len(f) > 1
+True
+
+Test Conditions:
+----------------
+
+Testing function with both first and last names:
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+Testing function with only the first name:
+>>> say_my_name("Walter")
+My name is Walter
+
+Testing function with empty names:
+>>> say_my_name("", "")
+My name is
+
+Test Conditions for Invalid Inputs:
+-----------------------------------
+
+Testing how function handles `None` as first name:
+>>> say_my_name(None, "Anjorin")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+Testing how function handles `None` as last name:
+>>> say_my_name("Great-Victor", None)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+Testing how function handles incorrect type as first name:
+>>> say_my_name(70, "Anjorin")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+Testing how function handles incorrect type as last name:
+>>> say_my_name("Great-Victor", [7])
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string

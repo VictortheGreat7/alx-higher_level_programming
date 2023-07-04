@@ -1,0 +1,85 @@
+The `0-add_integer` Module
+==========================
+
+This module provides a function `add_integer` that adds two numbers
+
+Using `add_integer`
+-------------------
+
+Importing the function from the module:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Checking for module's docstring:
+>>> m = __import__("0-add_integer").__doc__
+>>> len(m) > 1
+True
+
+Checking for function's docstring:
+>>> f = __import__("0-add_integer").add_integer.__doc__
+>>> len(f) > 1
+True
+
+Test Conditions:
+----------------
+
+Testing function with positive integers:
+>>> add_integer(7, 7)
+14
+
+Testing function with a negative and a positive integer:
+>>> add_integer(-70, 7)
+-63
+
+Testing function with two negative integers:
+>>> add_integer(-70, -7)
+-77
+
+Testing function with floating-point numbers:
+>>> add_integer(7.0, 7.0)
+14
+
+Testing function with a single integer:
+>>> add_integer(7)
+105
+
+Test Conditions for Invalid Inputs:
+-----------------------------------
+
+Testing function with a non-integer second argument:
+>>> add_integer(7, "Babbage")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+Testing function with a None argument:
+>>> add_integer(None)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+Testing function with a non-number type:
+>>> add_integer((1, 2, 3))
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+Special Cases:
+--------------
+
+Testing function with positive infinity and 0:
+>>> add_integer(float('inf'), 0)
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
+
+Testing function with positive and negative infinity:
+>>> add_integer(float('inf'), float('-inf'))
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
+
+Testing function with 0 and NaN:
+>>> add_integer(0, float('nan'))
+Traceback (most recent call last):
+	...
+ValueError: cannot convert float NaN to integer

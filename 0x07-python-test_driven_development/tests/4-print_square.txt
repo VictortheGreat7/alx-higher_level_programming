@@ -1,0 +1,84 @@
+The `4-print_square` Module
+===========================
+
+This module contains a function `print_square` that prints a square with the character '#'
+
+Using `print_square`
+--------------------
+
+Importing the function from the module:
+>>> print_square = __import__('4-print_square').print_square
+
+Checking for module's docstring:
+>>> m = __import__("4-print_square").__doc__
+>>> len(m) > 1
+True
+
+Checking for function's docstring:
+>>> f = __import__("4-print_square").print_square.__doc__
+>>> len(f) > 1
+True
+
+Test Conditions:
+----------------
+
+Testing function with size 7:
+>>> print_square(7)
+#######
+#######
+#######
+#######
+#######
+#######
+#######
+
+Testing function with size 10:
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+Testing function with size 0:
+>>> print_square(0)
+
+Testing function with size 1:
+>>> print_square(1)
+#
+
+Test Conditions for Invalid Inputs:
+-----------------------------------
+
+Testing function with negative size:
+>>> print_square(-1)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+Testing function with non-integer size:
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+Testing function with non-number types:
+>>> print_square((1,))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+Testing function with non-int number types:
+>>> print_square(1.0)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+Testing function with None:
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
