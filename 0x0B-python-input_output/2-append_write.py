@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 """
-Module for the write_file function
+Module for the append_write function
 """
 
 
-def write_file(filename="", text=""):
-    """Writes a string to a text file (UTF8) and returns the number of characters written
+def append_write(filename="", text=""):
+    """Appends a string at the end of a text file (UTF8)
+        and returns the number of characters added
 
     Args:
-        filename: The name of the file to be written in
-        text: The string to be written in the file
+        filename: The name of the file where the string will be appended
+        text: The string to be appended
+
+    Returns:
+        The number of characters added
     """
-    with open(filename, 'w', encoding='utf=8') as file:
-        return file.write(text)
+    with open(filename, 'a', encoding='utf=8') as file:
+        return (file.write(text))
